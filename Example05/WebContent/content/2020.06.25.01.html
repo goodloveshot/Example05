@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+     //정규표현식 REGEXP 활용
+     // 1. 주민등록 번호 검증
+         //--주민등록 번호 패턴 : 숫자로 시작한다. 앞 6개의 숫자,하이픈,성별,뒤 7개 숫자
+     var pattern1 = /^\d{6}-[1-6]\d{}/;
+     var arr1 ="200203-7150713".match(pattern1);
+     console.log(arr1);
+         //-- 이메일 형식 패턴 :     abc3d@aaa.com
+        	      // 숫자로 시작하지 않는다. @가 붙는다.
+        	      // . 이 한개 일때. 뒤에 영문자 3글자 aaa.com
+        	      // ..이 두개일때 . 뒤에 영문이 2글자 aaa.co.kr
+        	      // @ 뒤는 숫자로 시작하지 않는다.
+    var pattern2 = 
+    	/^[^0-9].*@[^0-9].*\.([a-zA-Z]{2}\.[a-zA-z]{2}|[a-zA-Z]{3})$/i;
+    var arr2 = "aaa@aaa.COM".match(pattern2);
+    	console.log(arr2);
+    	//가입자 비밀번호 규칙을 만듭니다.
+    	//규칙 1. 비밀번호는 8글자 이상 13글자 이하로 생성해야 한다.
+    	//규칙 2. 비밀번호는 특수문자 # 또는 @ 또는 *을 한개 이상 조합해야한다.
+    	//규칙 3. 비밀번호는 대문자를 한개 이상 조합해야한다.
+    	//규칙 4. 비밀번호는 숫자로 시작할수 없다.
+    	//search 메소드 활용 return boolean
+    	var mypass1 = "ar#Az33";//pass
+    	var mypass2 = "1ar#Az33";//fail
+    	var mypass3 = "ar#Az33aaetrsc";//fail
+    	var mypass1 = "ar#Az33ee33";//fail
+    	var mypass2 = "arr#3ee33";//fail
+    	
+    	checkPassword(mypass1)
+    	checkPassword(mypass2)
+    	checkPassword(mypass3)
+    	checkPassword(mypass4)
+    	checkPassword(mypass5)
+    	function checkPassword(pwd){
+    		var chk = "fail";
+    		
+    		console.log(chk);
+    	}
+</script>
+</head>
+<body>
+
+</body>
+</html>
